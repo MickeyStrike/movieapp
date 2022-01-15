@@ -99,6 +99,7 @@ const ListMovie:NextPage<Props> = ({ dataProps, title, style, page = 1 }) => {
             slidesPerView: 2,
             spaceBetween: 5
           },
+          // // when window width is >= 980px
           980: {
             slidesPerView: 3,
             spaceBetween: 5
