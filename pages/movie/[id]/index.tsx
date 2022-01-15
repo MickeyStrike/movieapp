@@ -3,7 +3,7 @@ import { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+import Router, { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 import Card from '../../../components/card'
 import CardEpisode from '../../../components/cardEpisode'
@@ -59,6 +59,10 @@ const DetailMovie: NextPage = () => {
 
   useEffect(() => getDetailMovie(), [router])
 
+  const goToDashboard = () => {
+    Router.push('/')
+  }
+
   return (
     <div className={styleHome['container']}>
       <Head>
@@ -68,17 +72,14 @@ const DetailMovie: NextPage = () => {
       </Head>
 
       <div className={styleHome['main']} style={{ color: 'white' }}>
-        <div className={styleHome['container_detail']} style={{ color: 'white', cursor: 'pointer' }}>
-          <Link href="/">
-            <Image src='/rebel.png' width={34} height={34} />
-          </Link>
+        <div className={styleHome['container_detail']} style={{ color: 'white', cursor: 'pointer' }} onClick={goToDashboard}>
+          <Image src='/rebel.png' width={34} height={34} />
         </div>
         <div className={`${styleHome['container_detail']} ${styleHome['mt-5']}`} style={{ color: 'white' }}>
           <Card 
             id={1234}
             imageUrl={`https://image.tmdb.org/t/p/original${dataDetail?.poster_path}`}
             rate={5}
-            key={1}
             tags='Science Fiction'
             title={dataDetail?.title}
           />

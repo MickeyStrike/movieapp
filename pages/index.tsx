@@ -11,9 +11,6 @@ const Home: NextPage = () => {
   const [listMovies, setListMovies] = useState<ListMoviesHome>({ list1: true, list2: false, list3: false })
 
   const handleScroll = (e:Event) => {
-    console.log(e, 'event')
-    console.log(window.scrollY, 'scroll Y')
-    console.log(window.scrollY, 'scroll Y')
     if(window.scrollY >= 650 && window.scrollY <= 680 && !listMovies.list2) setListMovies({ ...listMovies, list2: true })
     else if (window.scrollY >= 1100 && !listMovies.list3) setListMovies({ ...listMovies, list3: true })
   }

@@ -116,7 +116,7 @@ const ListMovie:NextPage<Props> = ({ dataProps, title, style, page = 1 }) => {
         {
           listData.map((dataMap, index) => {
             return (
-              <SwiperSlide>
+              <SwiperSlide key={index}>
                 <Card
                   id={dataMap.id}
                   key={index}
