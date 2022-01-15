@@ -1,0 +1,111 @@
+
+.button-carousel-left {
+  position: absolute;
+  z-index: 2;
+  top: calc(50% - 15px);
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 20px;
+  background: rgb(255 255 255 / 0%);
+  color: rgba(255, 255, 255, 0.582);
+  border: none;
+  font-size: 20px;
+  left: 15px;
+  align-items: center;
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.button-carousel-left:hover {
+  color: #FFF;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.button-carousel-right {
+  position: absolute;
+  z-index: 2;
+  top: calc(50% - 15px);
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 20px;
+  background: rgb(255 255 255 / 0%);
+  color: rgba(255, 255, 255, 0.582);
+  border: none;
+  font-size: 20px;
+  right: 15px;
+  align-items: center;
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.button-carousel-right:hover {
+  color: #FFF;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.carousel__body {
+  display: flex;
+}
+
+.carousel__body-container {
+  bottom: calc(30% - 25px);
+  position: absolute;
+  margin: 0 10%;
+  color: white;
+  text-align: left;
+  max-width: 632px;
+}
+
+.carousel-title {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 56px;
+  line-height: 64px;
+  margin: 10px 0;
+}
+
+.carousel-tags {
+  background: rgba(0, 255, 255, 0.123);
+  color: #0FEFFD;
+  padding: 3px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 100;
+  font-weight: thin;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 6px;
+}
+
+.carousel-description {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 32px;
+  color: #FFFFFF;
+  margin: 10px 0;
+}
+
+.carousel-button {
+  color: #ffe922;
+  background: rgba(255, 233, 34, 0);
+  cursor: pointer;
+  border: #FFE922 1px solid;
+  padding: 12px 40px;
+  border-radius: 24px;
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.carousel-button:hover {
+  background: rgba(255, 233, 34, 0.2);
+}

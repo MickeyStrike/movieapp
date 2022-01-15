@@ -1,15 +1,11 @@
-.container {
+/* .container {
   padding: 0 2rem;
-}
+} */
 
 .main {
+  padding: 2rem;
+  background: #1D1D1D;
   min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .footer {
@@ -113,4 +109,162 @@
     width: 100%;
     flex-direction: column;
   }
+}
+
+.container_flex {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin: 1rem 0 2rem 0;
+  align-items: center;
+}
+
+.container__flex-item {
+  flex: auto 1 1;
+  padding: 50px;
+}
+
+.title-list {
+  margin-left: 10%;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 37.5px;
+  color: #FFF;
+}
+
+.see-all-list {
+  margin-right: 14%;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 18.75px;
+  color: #FFE922;
+  cursor: pointer;
+}
+
+.container_detail {
+  padding: 0 10%;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 2rem;
+}
+
+.mt-5 {
+  margin-top: 5%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  flex: 1 0 0%
+}
+
+.title-synopsis {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 37.5px;
+  color: #FFF;
+}
+
+.body-synopsis {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 32px;
+  background: #242424;
+  padding: 16px;
+  margin-top: 2rem;
+  opacity: 0.6;
+}
+.title-cast {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 32px;
+  color: #FFF;
+  align-items: center;
+}
+
+.body-cast {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 32px;
+  color: #FFF;
+  align-items: center;
+}
+
+.title-episodes {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.select-custom {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18.75;
+  color: #FFF;
+  border: none;
+  /* align-items: center; */
+  padding: 10px 20px;
+  /* -moz-appearance:none;
+  -webkit-appearance:none;
+  appearance:none; */
+}
+
+.card_episode {
+
+}
+
+.card_episode-title {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23.44px;
+  color: #FFF;
+}
+
+.card_episode-overview {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 32px;
+  color: #FFF;
+  opacity: 0.6;
+  /* max-width: 555px; */
+}
+
+.card_episode-hours {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFF;
+  opacity: 0.6;
+}
+
+.body-episode {
+  margin-top: 30px;
 }
