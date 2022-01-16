@@ -6,6 +6,16 @@
   padding: 2rem;
   background: #1D1D1D;
   min-height: 100vh;
+  margin: 0 auto;
+  max-width: 1500px;
+  /* width: 900px; */
+}
+
+.main-carousel {
+  background: #1D1D1D;
+  margin: 0 auto;
+  max-width: 1500px;
+  /* width: 900px; */
 }
 
 .footer {
@@ -231,9 +241,9 @@
   appearance:none; */
 }
 
-.card_episode {
+/* .card_episode {
 
-}
+} */
 
 .card_episode-title {
   font-family: 'Roboto', sans-serif;
@@ -267,4 +277,19 @@
 
 .body-episode {
   margin-top: 30px;
+}
+
+.container {
+  width: 1536;
+  background: #1D1D1D;
+}
+
+@media only screen and (max-width: 900px) {
+  .main-carousel {
+    width: 900px;
+  }
+
+  .main {
+    width: 1000;
+  }
 }

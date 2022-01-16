@@ -3,7 +3,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { WithCustomStatusArrowsAndIndicators } from '../components/carousel'
 import ListMovie from '../components/listMovie'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { ListMoviesHome } from '../interfaces/interface/interface.respose'
 
 const Home: NextPage = () => {
@@ -41,7 +41,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main className={styles['main-carousel']}>
         <WithCustomStatusArrowsAndIndicators />
       </main>
 
