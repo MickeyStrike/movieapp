@@ -3,11 +3,9 @@ import { Carousel } from 'react-responsive-carousel';
 import styles from '../styles/carousel.module.css'
 // carousel styles
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import axios, { AxiosResponse } from 'axios';
+import axios from 'axios';
 import { DataSource, ResponseGetNowPlaying } from '../interfaces/interface/interface.respose';
 import Router from 'next/router';
-
-// import httpService from '../simple_interceptor/http.services'
 
 export const WithCustomStatusArrowsAndIndicators = () => {
   const [temp, setTemp] = useState<DataSource[]>([])

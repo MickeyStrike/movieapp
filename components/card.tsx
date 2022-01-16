@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Router from 'next/router'
 import React, { useEffect, useState } from 'react'
 import styles from '../styles/card.module.css'

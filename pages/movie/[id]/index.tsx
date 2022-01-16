@@ -2,13 +2,12 @@ import axios from 'axios'
 import { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/link'
 import Router, { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 import Card from '../../../components/card'
 import CardEpisode from '../../../components/cardEpisode'
 import ListMovie from '../../../components/listMovie'
-import { DataSource, ResponseDetailMovie, ResponseDetailMovieSimiliar, ResultsResponseDetailMovieSimiliar } from '../../../interfaces/interface/interface.respose'
+import { DataSource, ResponseDetailMovie, ResponseDetailMovieSimiliar } from '../../../interfaces/interface/interface.respose'
 import styleHome from '../../../styles/Home.module.css'
 
 const DetailMovie: NextPage = () => {
@@ -52,7 +51,7 @@ const DetailMovie: NextPage = () => {
     if(id) {
       axios.get(`https://api.themoviedb.org/3/movie/${id}`, { params })
       .then(({ data }:{ data: ResponseDetailMovie }) => {
-        setDataDetail({ ...data, poster_path: `https://image.tmdb.org/t/p/w500${data?.poster_path}`, release_date: data.release_date.split('-')[0] })
+        setDataDetail({ ...data, poster_path: `https://image.tmdb.org/t/p/w500${data?.poster_path}`, release_date: data.release_date.split('-')[0], backdrop_path: `https://image.tmdb.org/t/p/w500${data?.backdrop_path}` })
       })
     }
   }
@@ -68,7 +67,7 @@ const DetailMovie: NextPage = () => {
       <Head>
         <title>Detail Movie</title>
         <meta name="description" content="Detail Movie" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/rebel.png" />
       </Head>
 
       <div className={styleHome['main']} style={{ color: 'white' }}>
@@ -118,7 +117,7 @@ const DetailMovie: NextPage = () => {
                 </div>
               </div>
               <div className={styleHome['body-episode']}>
-                <CardEpisode />
+                <CardEpisode backdrop={dataDetail?.backdrop_path} />
               </div>
             </div>
           </div>

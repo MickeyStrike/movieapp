@@ -1,13 +1,21 @@
+import { NextPage } from 'next'
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect } from 'react'
 import styleHome from '../styles/Home.module.css'
 
-const CardEpisode = () => {
+interface Props {
+  backdrop?: string
+}
+
+const CardEpisode:NextPage<Props> = ({ backdrop }) => {
+
+  useEffect(() => { console.log(backdrop, 'backdrop') }, [backdrop])
+
   return (
     <div className={styleHome['card_episode']}>
       <div className={styleHome['row']} style={{ gap: '15px' }}>
         <div className={styleHome['column']} style={{ flexGrow: 2 }}>
-          <Image src={'https://image.tmdb.org/t/p/original/o76ZDm8PS9791XiuieNB93UZcRV.jpg'} width={160} height={100} />
+          <Image src={backdrop ? backdrop : 'https://image.tmdb.org/t/p/original/o76ZDm8PS9791XiuieNB93UZcRV.jpg'} width={160} height={100} />
         </div>
         <div className={styleHome['column']} style={{ flexGrow: 6 }}>
           <div className={`${styleHome['row']}`}>

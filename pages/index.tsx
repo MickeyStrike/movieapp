@@ -38,7 +38,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Movie App</title>
         <meta name="description" content="Movie App" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/rebel.png" />
       </Head>
 
       <main className={styles['main-carousel']}>
