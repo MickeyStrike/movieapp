@@ -1,4 +1,4 @@
-import React, { useState, useEffect, CSSProperties } from 'react'
+import React, { useState, useEffect, CSSProperties, useRef } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { FreeMode } from 'swiper';
 import styles from '../styles/Home.module.css'
@@ -17,10 +17,25 @@ interface Props {
   title: string;
   style?: CSSProperties;
   page?:number;
-
+  sequenceItem?: number | string;
+  getTheIntersection?: (isIntersecting: boolean, key: number | string) => void;
 }
 
-const ListMovie:NextPage<Props> = ({ dataProps, title, style, page = 1 }) => {
+const ListMovie:NextPage<Props> = ({ dataProps, title, style, page = 1, getTheIntersection, sequenceItem }) => {
+
+  const containerRef = useRef(null)
+  const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 1.0
+  }
+
+  const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+    // const [entry] = entries
+    const [entry] = entries
+    if(getTheIntersection && sequenceItem) getTheIntersection(entry.isIntersecting, sequenceItem)
+    console.log(entry.isIntersecting, 'ini entry')
+  }
 
   const [listData, setListData] = useState<DataSource[]>([])
   const [titleList, setTitleList] = useState('')
@@ -61,6 +76,14 @@ const ListMovie:NextPage<Props> = ({ dataProps, title, style, page = 1 }) => {
     if(title) setTitleList(title)
   }, [title])
 
+  useEffect(() => {
+    const observer = new IntersectionObserver((callback) => handleIntersection(callback), options)
+    if(containerRef.current) observer.observe(containerRef.current)
+    return () => {
+      if(containerRef.current) observer.unobserve(containerRef.current)
+    }
+  }, [containerRef, options])
+
   if(loading) return (
   <div style={{ display: 'flex', flexDirection: 'column', alignContent: 'center', alignItems: 'center' }}>
     <Image src={'/loading2.gif'} width={100} height={100} />
@@ -69,7 +92,7 @@ const ListMovie:NextPage<Props> = ({ dataProps, title, style, page = 1 }) => {
   return (
     <div style={style ? style : undefined}>
       <div className={styles['container_flex']}>
-        <div className={styles['title-list']}>
+        <div className={styles['title-list']} ref={containerRef}>
           {titleList}
         </div>
         <div className={styles['see-all-list']}>
@@ -124,6 +147,7 @@ const ListMovie:NextPage<Props> = ({ dataProps, title, style, page = 1 }) => {
                   imageUrl={dataMap.imageUrl}
                   tags={dataMap.tags}
                   title={dataMap.title}
+                  detail={false}
                 />
               </SwiperSlide>
             )

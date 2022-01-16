@@ -52,7 +52,7 @@ const DetailMovie: NextPage = () => {
     if(id) {
       axios.get(`https://api.themoviedb.org/3/movie/${id}`, { params })
       .then(({ data }:{ data: ResponseDetailMovie }) => {
-        setDataDetail(data)
+        setDataDetail({ ...data, poster_path: `https://image.tmdb.org/t/p/w500${data?.poster_path}`, release_date: data.release_date.split('-')[0] })
       })
     }
   }
@@ -72,16 +72,18 @@ const DetailMovie: NextPage = () => {
       </Head>
 
       <div className={styleHome['main']} style={{ color: 'white' }}>
-        <div className={styleHome['container_detail']} style={{ color: 'white', cursor: 'pointer' }} onClick={goToDashboard}>
-          <Image src='/rebel.png' width={34} height={34} />
+        <div className={styleHome['container_detail']} style={{ color: 'white', cursor: 'pointer' }}>
+          <Image src='/rebel.png' width={34} height={34} onClick={goToDashboard} />
         </div>
         <div className={`${styleHome['container_detail']} ${styleHome['mt-5']}`} style={{ color: 'white' }}>
           <Card 
+            detail={true}
             id={1234}
             imageUrl={`https://image.tmdb.org/t/p/original${dataDetail?.poster_path}`}
             rate={5}
             tags='Science Fiction'
             title={dataDetail?.title}
+            year={dataDetail?.release_date}
           />
           <div style={{ display: 'flex', flexDirection: 'column', width: '100%', flexFlow: 'row wrap' }}>
             <div className={styleHome['row']} style={{ gap: '2rem' }}>

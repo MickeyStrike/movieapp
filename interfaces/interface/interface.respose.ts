@@ -79,10 +79,10 @@ export interface ResponseDetailMovie {
   original_title:        string;
   overview:              string;
   popularity:            number;
-  poster_path:           null;
+  poster_path:           string | null;
   production_companies:  ProductionCompany[];
   production_countries:  ProductionCountry[];
-  release_date:          Date;
+  release_date:          string;
   revenue:               number;
   runtime:               number;
   spoken_languages:      SpokenLanguage[];

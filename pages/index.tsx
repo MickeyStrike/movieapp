@@ -10,15 +10,28 @@ const Home: NextPage = () => {
 
   const [listMovies, setListMovies] = useState<ListMoviesHome>({ list1: true, list2: false, list3: false })
 
-  const handleScroll = (e:Event) => {
-    if(window.scrollY >= 650 && window.scrollY <= 680 && !listMovies.list2) setListMovies({ ...listMovies, list2: true })
-    else if (window.scrollY >= 1100 && !listMovies.list3) setListMovies({ ...listMovies, list3: true })
+  const getTheIntersection = (isIntersecting: boolean, sequenceItem: number | string):void => {
+    switch(sequenceItem) {
+      case 1:
+        if(!listMovies.list2 && isIntersecting) setListMovies({ ...listMovies, list2: true })
+        break;
+      case 2:
+        if(!listMovies.list3 && isIntersecting) setListMovies({ ...listMovies, list3: true })
+        break;
+      default:
+        break
+    }
   }
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  })
+  // const handleScroll = (e:Event) => {
+  //   if(window.scrollY >= 650 && window.scrollY <= 680 && !listMovies.list2) setListMovies({ ...listMovies, list2: true })
+  //   else if (window.scrollY >= 1100 && !listMovies.list3) setListMovies({ ...listMovies, list3: true })
+  // }
+
+  // useEffect(() => {
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => window.removeEventListener('scroll', handleScroll);
+  // })
 
   return (
     <div className={styles.container}>
@@ -33,9 +46,9 @@ const Home: NextPage = () => {
       </main>
 
       <main className={styles.main}>
-        { listMovies.list1 ? <ListMovie key={1} title='New Release' /> : null }
-        { listMovies.list2 ? <ListMovie key={2} title='TV Show' style={{ marginTop: '2.1rem' }} page={2} /> : null }
-        { listMovies.list3 ? <ListMovie key={3} title='Popular' style={{ marginTop: '2.1rem' }} page={3} /> : null }
+        { listMovies.list1 ? <ListMovie key={1} sequenceItem={1} title='New Release' getTheIntersection={getTheIntersection} /> : null }
+        { listMovies.list2 ? <ListMovie key={2} sequenceItem={2} title='TV Show' getTheIntersection={getTheIntersection} style={{ marginTop: '2.1rem' }} page={2} /> : null }
+        { listMovies.list3 ? <ListMovie key={3} sequenceItem={3} title='Popular' getTheIntersection={getTheIntersection} style={{ marginTop: '2.1rem' }} page={3} /> : null }
       </main>
     </div>
   )
