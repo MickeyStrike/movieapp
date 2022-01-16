@@ -33,7 +33,6 @@ const ListMovie:NextPage<Props> = ({ dataProps, title, style, page = 1, getTheIn
   const handleIntersection = (entries: IntersectionObserverEntry[]) => {
     const [entry] = entries
     if(getTheIntersection && sequenceItem) getTheIntersection(entry.isIntersecting, sequenceItem)
-    console.log(entry.isIntersecting, 'ini entry')
   }
 
   const [listData, setListData] = useState<DataSource[]>([])

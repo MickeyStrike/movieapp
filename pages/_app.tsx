@@ -4,7 +4,6 @@ import React, { useReducer, Dispatch } from 'react'
 import initialState from '../store/initialState'
 import { ActionReducer, InitialState } from '../interfaces/interface/interface.initialState'
 import reducer from '../store/reducer'
-import 'antd/dist/antd.css';
 
 export const StoreContext = React.createContext<{ stateContext: InitialState, dispatch: Dispatch<ActionReducer> }>({ stateContext: initialState, dispatch: () => null })
 

@@ -1,6 +1,6 @@
 import { NextPage } from 'next'
 import Image from 'next/image'
-import React, { useEffect } from 'react'
+import React from 'react'
 import styleHome from '../styles/Home.module.css'
 
 interface Props {
@@ -8,8 +8,6 @@ interface Props {
 }
 
 const CardEpisode:NextPage<Props> = ({ backdrop }) => {
-
-  useEffect(() => { console.log(backdrop, 'backdrop') }, [backdrop])
 
   return (
     <div className={styleHome['card_episode']}>

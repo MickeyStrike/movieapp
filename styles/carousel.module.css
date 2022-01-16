@@ -16,6 +16,7 @@
   align-content: center;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .button-carousel-left:hover {
@@ -40,6 +41,7 @@
   align-content: center;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .button-carousel-right:hover {
