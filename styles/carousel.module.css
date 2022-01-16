@@ -111,3 +111,19 @@
 .carousel-button:hover {
   background: rgba(255, 233, 34, 0.2);
 }
+
+@media only screen and (max-width: 1000px) {
+  .carousel-title {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .carousel-tags {
+    font-size: 10px;
+  }
+
+  .carousel-description {
+    font-size: 10px;
+    line-height: 20px;
+  }
+}

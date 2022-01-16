@@ -107,21 +107,21 @@ const ListMovie:NextPage<Props> = ({ dataProps, title, style, page = 1, getTheIn
         breakpoints={{
           // when window width is >= 320px
           320: {
-            slidesPerView: 1,
+            slidesPerView: 3,
             spaceBetween: 5
           },
           // when window width is >= 480px
           480: {
-            slidesPerView: 1,
+            slidesPerView: 3,
             spaceBetween: 5
           },
           // when window width is >= 640px
           660: {
-            slidesPerView: 2,
+            slidesPerView: 3,
             spaceBetween: 5
           },
           // // when window width is >= 980px
-          980: {
+          1000: {
             slidesPerView: 3,
             spaceBetween: 5
           },

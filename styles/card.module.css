@@ -150,3 +150,23 @@
   opacity: 0.6;
   margin-left: 10px;
 }
+
+.card__wrapper-star-releaseyear {
+  margin: '10px 0';
+  max-width: 300px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .card__body-container-detail {
+    margin: 0 0 0 0.8rem;
+    position: relative;
+    color: white;
+    bottom: 15%;
+    z-index: 3;
+  }
+
+  .card__wrapper-star-releaseyear {
+    margin: '8px 0';
+    max-width: 300px;
+  }
+}

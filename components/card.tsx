@@ -37,7 +37,7 @@ const Card:React.FC<Props> = ({ imageUrl, rate, title, tags, id, detail, year })
   }
 
   return (
-    <div className={styles['card']}>
+    <div className={styles['card']} onClick={!detail ? handleWatchNow : undefined}>
       <div className={!detail ? styles['card__image-container'] : styles['card__image-container-detail']}>
         <div
           className={!detail ? styles['card-image'] : styles['card-image-detail']}
@@ -49,7 +49,7 @@ const Card:React.FC<Props> = ({ imageUrl, rate, title, tags, id, detail, year })
       </div>
       <div className={!detail ? styles['card__body-container'] : styles['card__body-container-detail']}>
         <span className={styles['card-tags']}>{tags}</span>
-        <div style={{ margin: '10px 0', maxWidth: 300 }}>
+        <div className={styles['card__wrapper-star-releaseyear']} style={{  }}>
           <span>
             {starRating()}
           </span>

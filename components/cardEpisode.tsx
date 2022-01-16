@@ -21,7 +21,7 @@ const CardEpisode:NextPage<Props> = ({ backdrop }) => {
               1 - Winter is coming
             </div>
             <div className={`${styleHome['column']} ${styleHome['card_episode-hours']}`} style={{ display: 'flex', alignContent: 'flex-end', flexGrow: 1, alignItems: 'flex-end' , justifyContent: 'flex-end'}}>
-              <p>2h 30m</p>
+              2h 30m
             </div>
           </div>
           <div className={`${styleHome['row']} ${styleHome['card_episode-overview']}`}>

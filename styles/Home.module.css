@@ -262,6 +262,7 @@
   line-height: 32px;
   color: #FFF;
   opacity: 0.6;
+  margin-top: 1rem;
   /* max-width: 555px; */
 }
 
@@ -276,7 +277,7 @@
 }
 
 .body-episode {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .container {
@@ -284,12 +285,64 @@
   background: #1D1D1D;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1000px) {
   .main-carousel {
-    width: 900px;
+    width: 1000px;
   }
 
   .main {
-    width: 1000;
+    width: 1000px;
+  }
+
+  .body-synopsis {
+    font-size: 16px;
+    line-height: 28px;
+    margin-top: 1rem;
+  }
+
+  .title-cast {
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  .body-cast {
+    font-size: 14px;
+    line-height: 28px;
+  }
+
+  .title-episodes {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .card_episode-title {
+    font-size: 18px;
+    line-height: 19px;
+    flex-grow: 2;
+  }
+  
+  .card_episode-overview {
+    font-size: 14px;
+    line-height: 28px;
+    margin-top: 0.5rem;
+    /* max-width: 555px; */
+  }
+
+  .card_episode-hours {
+    font-size: 14px;
+    line-height: 19px;
+    flex-grow: 4;
+  }
+
+  .body-episode {
+    margin-top: 0px;
+  }
+
+  .mt-5 {
+    margin-top: 3%;
+  }
+
+  .card_episode {
+    margin-top: 5%;
   }
 }
